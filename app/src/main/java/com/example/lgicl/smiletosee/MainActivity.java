@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE); // 设置全屏显示
+//        requestWindowFeature(Window.FEATURE_NO_TITLE); // 设置全屏显示
         setContentView(R.layout.main);
 
         SurfaceView sv = (SurfaceView) findViewById(R.id.surfaceView1); // 获取SurfaceView组件，用于显示相机预览
@@ -51,9 +51,9 @@ public class MainActivity extends Activity {
                     parameters.setPictureFormat(PixelFormat.JPEG);	//指定图片为JPEG图片
                     parameters.set("jpeg-quality", 80);	//设置图片的质量
                     parameters.setPictureSize(640, 480); 	//设置拍摄图片的尺寸
+                    parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_PICTURE);
                     camera.setParameters(parameters);	//重新设置相机参数
                     camera.startPreview();	//开始预览
-                    camera.autoFocus(null); // 设置自动对焦
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
