@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://F:/study/SRTP/face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
+    <libelement value="jar://F:/study/SRTP/face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
+    <libelement value="jar://F:/study/SRTP/分类算法/libsvm-3.22/java/libsvm.jar!/" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/study/SRTP/分类算法/libsvm-3.22/java/libsvm.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/study/SRTP/face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://F:/study/SRTP/face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://F:/study/SRTP/face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://F:/study/SRTP/face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="library" exported="" name="javacsv" level="project" />
+  </component>
+</module>
