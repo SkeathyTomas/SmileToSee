@@ -84,13 +84,15 @@ public class FaceResult {
 		keyWordDict.put("attributes", JsonType.JSON);
 		keyWordDict.put("headpose", JsonType.JSON);
 		keyWordDict.put("face_rectangle", JsonType.JSON);
-		
+		keyWordDict.put("gender", JsonType.JSON);
+		keyWordDict.put("smile", JsonType.JSON);
 		
 		keyWordDict.put("roll_angle", JsonType.DOUBLE);
 		keyWordDict.put("top", JsonType.DOUBLE);
 		keyWordDict.put("left", JsonType.DOUBLE);
 		keyWordDict.put("width", JsonType.DOUBLE);
 		keyWordDict.put("height", JsonType.DOUBLE);
+		keyWordDict.put("value", JsonType.STRING);
 		
 		for(int i=0;i<83;i++){
 			keyWordDict.put(Word.landMark[i], JsonType.JSON);

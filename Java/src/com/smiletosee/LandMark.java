@@ -4,12 +4,15 @@ import java.io.*;
 
 import com.megvii.cloud.http.*;
 import org.json.*;
+import com.google.gson.*;
 
 public class LandMark {
 	private final static String KEY = "9YQvHHQUUaOJjCRK3rWzfYQwRIEqnpt8";
 	private final static String SECRET = "3lOFSZUeIxwr9yGyhoDe6B-bGBjGVb7_";
 	CommonOperate face = new CommonOperate(KEY,SECRET);
-	
+
+	public String gender = "";
+	public double smile;
 	/*
 	 * get normalized landmark
 	 * @param originUrl 图片路径
@@ -17,7 +20,7 @@ public class LandMark {
 	 * @return landmark标准化后的数组
 	 * @throws Exception
 	 */
-	public double[] Get(String originUrl, String afterUrl) throws Exception{
+	public double[] GetLandMark(String originUrl, String afterUrl) throws Exception{
 		
 		//get rollAngle and spin
 		File file = new File(originUrl);
@@ -40,7 +43,7 @@ public class LandMark {
 		File spinFile = new File(afterUrl+"spin.jpg");
 		buff = GetBytesFromFile.getBytesFromFile(spinFile);
 		spinFile.delete();
-		response = face.detectByte(buff, 1, "headpose");
+		response = face.detectByte(buff, 1, "gender,smiling");
 		result = new String(response.getContent());
 		json = new JSONObject(result);
 		faceResult = new FaceResult(json);
@@ -59,8 +62,13 @@ public class LandMark {
 			normLandmark[i+1] = (landmark[i+1] - landmark[3])/width;
 		}
 
+		gender = faceResult.get("faces").get(0).get("attributes").get("gender").get("value").toString();//获得性别信息
+		JsonParser parser = new JsonParser();
+		JsonObject gjson;
+		gjson = (JsonObject)parser.parse(result);
+		smile = gjson.get("faces").getAsJsonArray().get(0).getAsJsonObject().get("attributes").getAsJsonObject().get("smile").getAsJsonObject().get("value").getAsDouble();//获得微笑信息
+
 		return normLandmark;
-		
 	}
 
 }

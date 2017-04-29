@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <libelement value="jar://F:/study/SRTP/face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
-    <libelement value="jar://F:/study/SRTP/face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
-    <libelement value="jar://F:/study/SRTP/分类算法/libsvm-3.22/java/libsvm.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/../../分类算法/libsvm-3.22/java/libsvm.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -19,7 +19,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://F:/study/SRTP/分类算法/libsvm-3.22/java/libsvm.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../分类算法/libsvm-3.22/java/libsvm.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,25 +28,34 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://F:/study/SRTP/face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://F:/study/SRTP/face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../face++/facepp-java-sdk-master/FaceppSDK/bin/facepp.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://F:/study/SRTP/face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://F:/study/SRTP/face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../face++/java-sdk-master/java-sdk/FaceppSDK.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="javacsv" level="project" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../分类算法/gson-2.6.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

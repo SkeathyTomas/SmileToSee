@@ -1,4 +1,4 @@
-package com.smiletosee;
+package com.smiletosee.test;
 
 import java.io.File;
 

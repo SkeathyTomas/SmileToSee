@@ -40,10 +40,7 @@ public class Eyebrow {
             for (int j=0;j<16;j++){
                 a[i][j] = new svm_node();
                 a[i][j].value = data[i][j];
-//                if (j!=15)
-//                    a[i][j].index = j;
-//                if (j==15)
-//                    a[i][j].index = -1;
+                a[i][j].index = j;
             }
         }
 

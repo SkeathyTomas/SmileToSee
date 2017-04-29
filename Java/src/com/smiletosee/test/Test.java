@@ -1,8 +1,9 @@
-package com.smiletosee;
+package com.smiletosee.test;
 
 import java.io.*;
 
 import com.megvii.cloud.http.*;
+import com.smiletosee.LandMark;
 import org.json.*;
 
 public class Test {
@@ -17,7 +18,7 @@ public class Test {
 		File data = new File("F:/study/SRTP/模型训练/data.csv");
 		BufferedWriter writer = new BufferedWriter(new FileWriter(data));
 
-		landMark = test.Get(originUrl+6+".jpg", afterUrl);//指定图片
+		landMark = test.GetLandMark(originUrl+6+".jpg", afterUrl);//指定图片
 		for(int j=0;j<166;j=j+2){
 			writer.write(String.valueOf(landMark[j])+",");
 //			System.out.print(landMark[j]+" ");
