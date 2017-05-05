@@ -112,7 +112,7 @@ public class FaceInfo {
     public static void main(String[] args) throws Exception{
         FaceInfo faceInfo = new FaceInfo();
         faceInfo.GetFaceInfo("F:/study/SRTP/模型训练/人脸样本1.0/男/1.jpg");
-        System.out.println(faceInfo.mouthX);
-        System.out.println(faceInfo.mouthY);
+//        System.out.println(faceInfo.mouthX);
+//        System.out.println(faceInfo.mouthY);
     }
 }

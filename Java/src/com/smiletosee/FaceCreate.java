@@ -18,7 +18,10 @@ public class FaceCreate {
 
         //选取需要处理的人脸，获得基本信息
         FaceInfo faceInfo = new FaceInfo();
-        faceInfo.GetFaceInfo("F:/study/SRTP/形象生成/1.jpg");
+//        LandMark key = new LandMark();
+//        key.SetKey("","");
+        String input = "F:/study/SRTP/形象生成/3.jpg";
+        faceInfo.GetFaceInfo(input);
 //        System.out.println(faceInfo.contour_type);
 
         //人脸素材定位
@@ -36,11 +39,21 @@ public class FaceCreate {
                 {new File("F:/study/SRTP/素材库/eyebrow/3l.png"),new File("F:/study/SRTP/素材库/eyebrow/3r.png")},
                 {new File("F:/study/SRTP/素材库/eyebrow/4l.png"),new File("F:/study/SRTP/素材库/eyebrow/4r.png")}
         };
-        File eyes[] = {
-                new File("F:/study/SRTP/素材库/eye/1.左.png")
+        File eyes[][] = {
+                {new File("F:/study/SRTP/素材库/eye/m1l.png"),new File("F:/study/SRTP/素材库/eye/m1r.png")},
+                {new File("F:/study/SRTP/素材库/eye/m2l.png"),new File("F:/study/SRTP/素材库/eye/m2r.png")},
+                {new File("F:/study/SRTP/素材库/eye/m3l.png"),new File("F:/study/SRTP/素材库/eye/m3r.png")},
+                {new File("F:/study/SRTP/素材库/eye/f1l.png"),new File("F:/study/SRTP/素材库/eye/f1r.png")},
+                {new File("F:/study/SRTP/素材库/eye/f2l.png"),new File("F:/study/SRTP/素材库/eye/f2r.png")},
+                {new File("F:/study/SRTP/素材库/eye/f3l.png"),new File("F:/study/SRTP/素材库/eye/f3r.png")}
         };
         File mouths[] = {
-                new File("F:/study/SRTP/素材库/mouth/f1.png")
+                new File("F:/study/SRTP/素材库/mouth/m1.png"),
+                new File("F:/study/SRTP/素材库/mouth/m2.png"),
+                new File("F:/study/SRTP/素材库/mouth/m3.png"),
+                new File("F:/study/SRTP/素材库/mouth/f1.png"),
+                new File("F:/study/SRTP/素材库/mouth/f2.png"),
+                new File("F:/study/SRTP/素材库/mouth/f3.png")
         };
         File hairs[] = {
                 new File("F:/study/SRTP/素材库/hair/hairman.png"),
@@ -52,13 +65,13 @@ public class FaceCreate {
         int eyeX, eyeY;
         int mouthX, mouthY;
 
-        //原始数据*比例放大+水平数值修正
+        //原始数据*比例放大+水平竖直修正
         eyebrowX = (int) (faceInfo.eyebrowX * 240) + 30;
-        eyebrowY = (int) (faceInfo.eyebrowY *280) + 160;
-        eyeX = (int) (faceInfo.eyebrowY * 240) + 30;
+        eyebrowY = (int) (faceInfo.eyebrowY *160) + 160;
+        eyeX = (int) (faceInfo.eyebrowX * 240) + 30;
         eyeY = 0 + 160;
         mouthX = (int) (faceInfo.mouthX * 240) + 30;
-        mouthY = (int) (faceInfo.mouthY * 280) + 110;
+        mouthY = (int) (faceInfo.mouthY * 160) + 160;
 
         //Image对象定义
         Image face, eyebrowL, eyebrowR, eyeL, eyeR, mouth,hair;
@@ -87,6 +100,23 @@ public class FaceCreate {
                 case 6:eyebrowL = ImageIO.read(eyebrows[3][0]);eyebrowR = ImageIO.read(eyebrows[3][1]);break;
                 default:eyebrowL = ImageIO.read(eyebrows[0][0]);eyebrowR = ImageIO.read(eyebrows[0][1]);break;
             }
+            //眼睛
+            switch (faceInfo.eye_type){
+                case 1:eyeL = ImageIO.read(eyes[0][0]);eyeR = ImageIO.read(eyes[0][1]);break;
+                case 2:eyeL = ImageIO.read(eyes[1][0]);eyeR = ImageIO.read(eyes[1][1]);break;
+                case 4:eyeL = ImageIO.read(eyes[3][0]);eyeR = ImageIO.read(eyes[3][1]);break;
+                case 5:eyeL = ImageIO.read(eyes[4][0]);eyeR = ImageIO.read(eyes[4][1]);break;
+                case 7:eyeL = ImageIO.read(eyes[5][0]);eyeR = ImageIO.read(eyes[5][1]);break;
+                case 8:eyeL = ImageIO.read(eyes[6][0]);eyeR = ImageIO.read(eyes[6][1]);break;
+                default:eyeL = ImageIO.read(eyes[0][0]);eyeR = ImageIO.read(eyes[0][1]);break;
+            }
+            //嘴巴
+            if (faceInfo.smile < 20)
+                mouth = ImageIO.read(mouths[0]);
+            else if (faceInfo.smile <70)
+                mouth = ImageIO.read(mouths[1]);
+            else
+                mouth = ImageIO.read(mouths[2]);
             //头发
             hair = ImageIO.read(hairs[0]);
         }
@@ -107,6 +137,23 @@ public class FaceCreate {
                 case 6:eyebrowL = ImageIO.read(eyebrows[3][0]);eyebrowR = ImageIO.read(eyebrows[3][1]);break;
                 default:eyebrowL = ImageIO.read(eyebrows[0][0]);eyebrowR = ImageIO.read(eyebrows[0][1]);break;
             }
+            //眼睛
+            switch (faceInfo.eye_type){
+                case 1:eyeL = ImageIO.read(eyes[0][0]);eyeR = ImageIO.read(eyes[0][1]);break;
+                case 2:eyeL = ImageIO.read(eyes[1][0]);eyeR = ImageIO.read(eyes[1][1]);break;
+                case 4:eyeL = ImageIO.read(eyes[3][0]);eyeR = ImageIO.read(eyes[3][1]);break;
+                case 5:eyeL = ImageIO.read(eyes[4][0]);eyeR = ImageIO.read(eyes[4][1]);break;
+                case 7:eyeL = ImageIO.read(eyes[5][0]);eyeR = ImageIO.read(eyes[5][1]);break;
+                case 8:eyeL = ImageIO.read(eyes[6][0]);eyeR = ImageIO.read(eyes[6][1]);break;
+                default:eyeL = ImageIO.read(eyes[0][0]);eyeR = ImageIO.read(eyes[0][1]);break;
+            }
+            //嘴巴
+            if (faceInfo.smile < 20)
+                mouth = ImageIO.read(mouths[3]);
+            else if (faceInfo.smile <70)
+                mouth = ImageIO.read(mouths[4]);
+            else
+                mouth = ImageIO.read(mouths[5]);
             //头发
             hair = ImageIO.read(hairs[1]);
         }
@@ -119,9 +166,9 @@ public class FaceCreate {
         graphics.drawImage(face,0,0,null);//画底脸
         graphics.drawImage(eyebrowL,eyebrowX-30,eyebrowY-10,null);//眉毛
         graphics.drawImage(eyebrowR,300-eyebrowX-30,eyebrowY-10,null);
-//        graphics.drawImage(eyeL,eyeX-30,eyeY-10,60,30,null);//眼睛
-//        graphics.drawImage(eyeR,300-eyeX-30,eyeY-10,null);
-//        graphics.drawImage(mouth,mouthX-30,mouthY-20,60,40,null);//嘴巴
+        graphics.drawImage(eyeL,eyeX-30,eyeY-10,60,30,null);//眼睛
+        graphics.drawImage(eyeR,300-eyeX-30,eyeY-10,null);
+        graphics.drawImage(mouth,mouthX-30,mouthY-20,60,40,null);//嘴巴
         graphics.drawImage(hair,0,0,null);//头发
 
         //输出
