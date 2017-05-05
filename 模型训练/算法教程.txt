@@ -1,0 +1,3 @@
+基本用法http://blog.csdn.net/wenyusuran/article/details/53240571
+
+tune函数查找最小误差http://www.cnblogs.com/sunshisonghit/p/5085833.html
