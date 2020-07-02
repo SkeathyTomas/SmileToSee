@@ -12,4 +12,4 @@ We apply [face++](https://www.faceplusplus.com.cn/) to detect the face landmarks
 
 ## Examples of Results
 
-![image-20200702135222715](README.assets/image-20200702135222715.png)
+![example](README.assets/image-20200702135222715.png)
